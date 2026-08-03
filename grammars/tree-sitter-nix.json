@@ -1,7 +1,7 @@
 {
   "name": "Nix",
   "scopeName": "source.nix",
-  "type": "modern-tree-sitter",
+  "type": "tree-sitter",
   "parser": "tree-sitter-nix",
   "injectionRegex": "^(nix)$",
   "fileTypes": ["nix"],
