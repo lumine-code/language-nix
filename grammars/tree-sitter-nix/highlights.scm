@@ -26,8 +26,8 @@
   (float_expression)
 ] @constant.numeric.nix
 
-(escape_sequence) @escape
-(dollar_escape) @escape
+(escape_sequence) @constant.character.escape.nix
+(dollar_escape) @constant.character.escape.nix
 
 (function_expression
   universal: (identifier) @variable.parameter.nix
@@ -35,7 +35,7 @@
 
 (formal
   name: (identifier) @variable.parameter.nix
-  "?"? @punctuation.delimiter)
+  "?"? @punctuation.separator.parameter.default.nix)
 
 (select_expression
   attrpath: (attrpath (identifier)) @variable.other.member.nix)
