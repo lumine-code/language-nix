@@ -1,0 +1,22 @@
+{
+  "name": "Nix",
+  "scopeName": "source.nix",
+  "type": "modern-tree-sitter",
+  "parser": "tree-sitter-nix",
+  "injectionRegex": "^(nix)$",
+  "fileTypes": ["nix"],
+  "comments": {
+    "start": "# "
+  },
+  "treeSitter": {
+    // Pin a tag or a full SHA, never a branch. Verify the ref is on the main
+    // line before trusting it — `gh api repos/OWNER/REPO/compare/<ref>...HEAD`
+    // reporting `diverged` or a nonzero `behind` means it is not.
+    "parserSource": "github:cstrahan/tree-sitter-nix#v0.3.0",
+    "wasmBuildTool": "tree-sitter-cli#v0.26.11",
+    "grammar": "tree-sitter-nix/tree-sitter-nix.wasm",
+    "highlightsQuery": "tree-sitter-nix/highlights.scm",
+    "localsQuery": "tree-sitter-nix/locals.scm",
+    "tagsQuery": "tree-sitter-nix/tags.scm"
+  }
+}
