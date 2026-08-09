@@ -9,7 +9,7 @@ const path = require("path");
 
 describe("Nix Tree-sitter grammar", () => {
   beforeEach(async () => {
-    await atom.packages.activatePackage("language-nix");
+    await lumine.packages.activatePackage("language-nix");
   });
 
   it("tokenizes the fixture", async () => {
