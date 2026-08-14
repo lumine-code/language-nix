@@ -10,12 +10,12 @@ Nix language support.
 
 ## Installation
 
-To install `language-nix` search for _language-nix_ in the Install pane of the Lumine settings or run `lumine --install lumine-code/language-nix`.
+To install `language-nix` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/language-nix`.
 
 ## Services
 
-- **hyperlink.injection** (`^1.0.0`): consumed to highlight URLs inside Nix files as clickable links.
-- **todo.injection** (`^1.0.0`): consumed to highlight `TODO`-style markers inside comments.
+- `hyperlink.injection`: consumed to highlight URLs inside Nix files as clickable links.
+- `todo.injection`: consumed to highlight `TODO`-style markers inside comments.
 
 ## Contributing
 
