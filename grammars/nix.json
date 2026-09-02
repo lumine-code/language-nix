@@ -3,7 +3,7 @@
   "scopeName": "source.nix",
   "type": "tree-sitter",
   "parser": "tree-sitter-nix",
-  "injectionRegex": "^(nix)$",
+  "injectionNames": ["nix"],
   "fileTypes": ["nix"],
   "comments": {
     "start": "# "
@@ -14,9 +14,9 @@
     // reporting `diverged` or a nonzero `behind` means it is not.
     "parserSource": "github:cstrahan/tree-sitter-nix#v0.3.0",
     "wasmBuildTool": "tree-sitter-cli#v0.26.13",
-    "grammar": "tree-sitter-nix/tree-sitter-nix.wasm",
-    "highlightsQuery": "tree-sitter-nix/highlights.scm",
-    "localsQuery": "tree-sitter-nix/locals.scm",
-    "tagsQuery": "tree-sitter-nix/tags.scm"
+    "grammar": "nix.wasm",
+    "highlightsQuery": "nix-highlights.scm",
+    "localsQuery": "nix-locals.scm",
+    "tagsQuery": "nix-tags.scm"
   }
 }
