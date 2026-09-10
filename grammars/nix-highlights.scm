@@ -1,4 +1,5 @@
-(comment) @comment.line.nix
+((comment) @comment.line.nix
+  (#set! adjust.endBeforeFirstMatchOf "\\r?$"))
 
 [
   "if"
