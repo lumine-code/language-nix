@@ -3,7 +3,7 @@
   "scopeName": "source.nix",
   "type": "tree-sitter",
   "parser": "tree-sitter-nix",
-  "injectionNames": ["nix"],
+  "injectionNames": ["nix", "nixos"],
   "fileTypes": ["nix"],
   "comments": {
     "start": "# "
