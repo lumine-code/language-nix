@@ -17,6 +17,7 @@
     "grammar": "nix.wasm",
     "highlightsQuery": "nix-highlights.scm",
     "localsQuery": "nix-locals.scm",
-    "tagsQuery": "nix-tags.scm"
+    "tagsQuery": "nix-tags.scm",
+    "injectionsQuery": "nix-injections.scm"
   }
 }
