@@ -3,7 +3,7 @@
 ;;Function definitions
 (binding
   attrpath: (attrpath attr: (identifier)) @name
-  expression: (function_expression) @definition.function)
+  expression: (function_expression)) @definition.function
 ;;Function/method calls
 (apply_expression function: (apply_expression function: (variable_expression name: (identifier) @name)) @reference.call)
 

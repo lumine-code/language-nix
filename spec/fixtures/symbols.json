@@ -1,0 +1,13 @@
+{
+  "source.nix": {
+    "text": "{ greet = name: name; }",
+    "symbols": [
+      {
+        "name": "greet",
+        "tag": "function"
+      }
+    ],
+    "absent": ["name"],
+    "only": true
+  }
+}
