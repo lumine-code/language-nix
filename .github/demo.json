@@ -1,16 +1,61 @@
 {
   "title": "language-nix",
-  "description": "Nix syntax highlighting in the editor.",
-  "recordedOn": "2026-10-13",
-  "sourceRevision": "2fe9e2aebac41877414f683c088350c6729e1fde",
+  "description": "Nix syntax highlighting at the default editor font size.",
+  "recordedOn": "2026-10-14",
+  "sourceRevision": "45d1d2626d150bd3048b86f827f82c20624619c5",
+  "themeSourceRevision": "14a69683b0e3238e2bc128fbfae3866c1e4ee9c6",
   "mode": "normal",
   "fontSettings": "default",
+  "scenario": "demo.js",
+  "recipeHash": "f2f71a1161a047cb8e6375517f8aa5cf23ed905795ccf1706511944651b0f52b",
+  "environment": {
+    "platform": "win32",
+    "arch": "x64",
+    "electron": "44.7.0",
+    "chrome": "152.0.7977.130",
+    "devicePixelRatio": 1,
+    "locale": "en-GB",
+    "fontFamily": "Fira Code, Menlo, DejaVu Sans Mono, Consolas, monospace",
+    "fontSize": 14,
+    "themes": ["one-day-syntax", "one-day-ui"]
+  },
+  "viewport": { "width": 1100, "height": 360 },
+  "cornerRadius": 10,
+  "sources": {
+    "editor": {
+      "revision": "c4d7a05fe6960ae6fb041981d6cf13e9c0286b17",
+      "dirty": true,
+      "workingTreeHash": "c8c1ecbfffafd0d4ca1f3ef718222e809b0d3f3aabe3d890d222f58976eb8817"
+    },
+    "package": {
+      "revision": "45d1d2626d150bd3048b86f827f82c20624619c5",
+      "dirty": true,
+      "workingTreeHash": "c66b55995ed627598792e2416dd14de024b8bdad8c456387792a4813db4362fd"
+    },
+    "language-nix": {
+      "revision": "45d1d2626d150bd3048b86f827f82c20624619c5",
+      "dirty": true,
+      "workingTreeHash": "c66b55995ed627598792e2416dd14de024b8bdad8c456387792a4813db4362fd"
+    },
+    "one-theme": {
+      "revision": "14a69683b0e3238e2bc128fbfae3866c1e4ee9c6",
+      "dirty": true,
+      "workingTreeHash": "50ec2f83a6347dd8113870992ec4eb2be4014f3d9e12213c2f51b543f1eca793"
+    }
+  },
+  "fixtures": [
+    {
+      "file": "example.nix",
+      "sha256": "a8c6424fcfbac4d4d10659f97ddd214b51d727caa2a8819d54cb3a9c517d3b4a"
+    }
+  ],
   "images": [
     {
       "file": "demo.png",
       "label": "Nix syntax highlighting at the default editor font size.",
       "width": 1100,
-      "height": 360
+      "height": 360,
+      "sha256": "28cba38e870646c928bff40631d286c72d611d5e76f90f45c041c9964021c3e2"
     }
   ]
 }
