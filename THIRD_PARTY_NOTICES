@@ -1,6 +1,7 @@
 ----- BEGIN THIRD-PARTY LICENSE: parser:cstrahan_tree-sitter-nix -----
 Source: https://github.com/cstrahan/tree-sitter-nix
 Revision: v0.3.0
+Query adaptation: builtin precedence reviewed against cstrahan/tree-sitter-nix at 38a15330421d20f3a4d380759f9634d39ba3d8ec; parser binary remains at v0.3.0.
 
 Original file: LICENSE
 
