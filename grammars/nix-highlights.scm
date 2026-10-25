@@ -1,5 +1,8 @@
 ((comment) @comment.line.nix
+  (#match? @comment.line.nix "^#")
   (#set! adjust.endBeforeFirstMatchOf "\\r?$"))
+((comment) @comment.block.nix
+  (#match? @comment.block.nix "^/\\*"))
 
 [
   "if"
