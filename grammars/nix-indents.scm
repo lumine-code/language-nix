@@ -1,3 +1,17 @@
+; Recovery can split an unfinished indented string across error/data siblings.
+((ERROR "''") @preserve
+  (#is? indent.reindent true)
+  (#is-not? indent.matchesCurrentRow startPosition)
+  (#set! indent.force true))
+((variable_expression) @preserve
+  (#is? test.typeAt "previousSibling ERROR")
+  (#is? test.matchAt "previousSibling ^''")
+  (#is? indent.reindent true)
+  (#set! indent.force true))
+(ERROR (ERROR "''") [(_) "{" "}" "[" "]" "(" ")"] @preserve
+  (#is? indent.reindent true)
+  (#set! indent.force true))
+
 ; Reindent changes code structure, never the contents of multiline literals
 ; or the alignment a user chose inside a block comment.
 ([(string_expression) (indented_string_expression) (comment)] @preserve
