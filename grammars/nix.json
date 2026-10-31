@@ -18,6 +18,7 @@
     "highlightsQuery": "nix-highlights.scm",
     "localsQuery": "nix-locals.scm",
     "tagsQuery": "nix-tags.scm",
-    "injectionsQuery": "nix-injections.scm"
+    "injectionsQuery": "nix-injections.scm",
+    "indentsQuery": "nix-indents.scm"
   }
 }
