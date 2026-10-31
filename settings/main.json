@@ -1,10 +1,15 @@
 {
   ".source.nix": {
     "bracket-matcher": {
-      "autocompleteCharacters": ["()", "[]", "{}", "\"\"", "''"]
+      "autocompleteCharacters": ["()", "[]", "{}", "\"\""]
     },
     "editor": {
-      "commentStart": "# "
+      "commentStart": "# ",
+      "nonWordCharacters": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…",
+      "commentDelimiters": {
+        "line": "#",
+        "block": ["/*", "*/"]
+      }
     }
   }
 }

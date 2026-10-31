@@ -40,6 +40,8 @@
   },
   "specPackages": [
     "symbol-tree-sitter",
-    "language-shellscript"
+    "language-shellscript",
+    "bracket-matcher",
+    "language-source"
   ]
 }
