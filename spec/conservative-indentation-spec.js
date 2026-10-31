@@ -50,4 +50,43 @@ describe("Conservative nix indentation", () => {
     editor.autoIndentBufferRows(0, editor.getLastBufferRow() - 1);
     expect(editor.getText()).toBe(source);
   });
+
+  it("does not indent recovered delimiters in unfinished quoted strings", async () => {
+    for (const source of [
+      '"{',
+      '"text [',
+      '"(',
+      "''{",
+      '"price $10 {',
+      '"${value} {',
+      '"raw ${[1]} {',
+    ]) {
+      editor.setText(source);
+      await editor.whenGrammarSettled();
+      editor.setCursorBufferPosition([0, Infinity]);
+      editor.insertText("\n", { autoIndent: true, autoIndentNewline: true });
+      await editor.whenGrammarSettled();
+      expect(editor.lineTextForBufferRow(1)).withContext(source).toBe("");
+    }
+  });
+
+  it("retains the inherited margin inside an unfinished quoted attribute value", async () => {
+    editor.setText('{\n    value = "{');
+    await editor.whenGrammarSettled();
+    editor.setCursorBufferPosition([1, Infinity]);
+    editor.insertText("\n", { autoIndent: true, autoIndentNewline: true });
+    await editor.whenGrammarSettled();
+    expect(editor.lineTextForBufferRow(2)).toBe("    ");
+  });
+
+  it("still indents real unfinished containers around quotes and interpolation", async () => {
+    for (const source of ["[", "(", "{", '"complete" + [', '"${[', '{\n    value = "{']) {
+      editor.setText(source);
+      await editor.whenGrammarSettled();
+      editor.setCursorBufferPosition([0, Infinity]);
+      editor.insertText("\n", { autoIndent: true, autoIndentNewline: true });
+      await editor.whenGrammarSettled();
+      expect(editor.lineTextForBufferRow(1)).withContext(source).toBe("    ");
+    }
+  });
 });

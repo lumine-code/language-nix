@@ -10,5 +10,12 @@
 ; Interpolation has a distinct opener and must not close an outer container.
 (interpolation "}" @_IGNORE_ (#set! capture.final true))
 
+; An unfinished string may lose its string_expression wrapper during recovery.
+; Its surviving quote still identifies literal delimiters. A delimiter directly
+; after ${ is code, and parsed interpolation descendants keep their own hints.
+(ERROR ["\"" "''"] ["(" ")" "[" "]" "{" "}"] @_IGNORE_
+  (#is-not? test.textAt "previousSibling ${")
+  (#set! capture.final true))
+
 ["(" "[" "{"] @indent
 [")" "]" "}"] @dedent
