@@ -4,14 +4,16 @@
    attrpath: (attrpath (identifier) @_path)
    expression: (indented_string_expression (string_fragment) @injection.content)) @injection.owner
   (#match? @_path "(^\\w*Phase|(pre|post)\\w*|(.*\\.)?\\w*([sS]cript|[hH]ook)|(.*\\.)?startup)$")
-  (#set! injection.language "bash"))
+  (#set! injection.language "bash")
+  (#set! injection.content-edit-policy "content-words"))
 
 ((apply_expression
    function: (apply_expression
      function: [(variable_expression) (select_expression)] @_builder)
    argument: (indented_string_expression (string_fragment) @injection.content)) @injection.owner
   (#match? @_builder "(^|\\.)writeShellScript(Bin)?$")
-  (#set! injection.language "bash"))
+  (#set! injection.language "bash")
+  (#set! injection.content-edit-policy "content-words"))
 
 ((apply_expression
    function: (apply_expression
@@ -19,7 +21,8 @@
        function: [(variable_expression) (select_expression)] @_builder))
    argument: (indented_string_expression (string_fragment) @injection.content)) @injection.owner
   (#match? @_builder "(^|\\.)runCommand(((No)?(CC))?(Local)?)?$")
-  (#set! injection.language "bash"))
+  (#set! injection.language "bash")
+  (#set! injection.content-edit-policy "content-words"))
 
 ((apply_expression
    function: [(variable_expression) (select_expression)] @_builder
@@ -30,7 +33,8 @@
          expression: (indented_string_expression (string_fragment) @injection.content))))) @injection.owner
   (#match? @_builder "(^|\\.)writeShellApplication$")
   (#eq? @_path "text")
-  (#set! injection.language "bash"))
+  (#set! injection.language "bash")
+  (#set! injection.content-edit-policy "content-words"))
 
 ; Annotation candidates are filtered by the target grammar.
 ((comment) @injection.owner @injection.content

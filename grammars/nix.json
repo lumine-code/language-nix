@@ -19,6 +19,9 @@
     "localsQuery": "nix-locals.scm",
     "tagsQuery": "nix-tags.scm",
     "injectionsQuery": "nix-injections.scm",
-    "indentsQuery": "nix-indents.scm"
+    "indentsQuery": "nix-indents.scm",
+    "contentEditPolicies": {
+      "content-words": "../lib/content-edit-policy.js"
+    }
   }
 }
